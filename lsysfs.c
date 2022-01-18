@@ -369,6 +369,8 @@ static int do_read( const char *path, char *buffer, size_t size, off_t offset, s
 	if ( file_idx == -1 )
 		return -1;
 	
+	files_time[file_idx][0]=time(NULL);
+	
 	char *content = files_content[ file_idx ];
 	
 	memcpy( buffer, content + offset, size );
